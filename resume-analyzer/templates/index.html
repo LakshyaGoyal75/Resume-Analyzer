@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<div>
+
+<div class="container">
+
+    <h1>AI Resume Analyzer & Job Role Predictor</h1>
+<p>This system analyzes skills from a resume and predicts the most suitable job role using Machine Learning.</p>
+
+{% if not prediction %}
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="resume" accept=".pdf" required>
+    <br><br>
+    <button type="submit">Analyze Resume</button>
+</form>
+
+{% endif %}
+
+        {% if prediction %}
+
+            <div class="result-section">
+
+            <p class="file-name"><b>Analyzed Resume:</b> {{ filename }}</p>
+
+            <div class="resume-score {{ score_color }}">
+                Resume Score: {{ score }} / 100
+            </div>
+
+            <h2 class="role">
+            Recommended Role:
+            <span class="{% if 'does not match' in prediction %}error-role{% endif %}">
+            {{ prediction }}
+            </span>
+            </h2>
+
+            <h3 class="skills-title">Detected Skills: {{ skills|length }}</h3>
+
+            <div class="skills-container">
+                {% if skills|length == 0 %}
+                <p class="no-skill-msg">No relevant technical skills detected in this resume.</p>
+                {% endif %}
+            {% for skill in skills %}
+            <span class="skill-badge">{{ skill }}</span>
+            {% endfor %}
+            </div>
+
+            <button class="reset-btn" onclick="resetPage()">Analyze Another Resume</button>
+
+            </div>
+
+        {% endif %}
+
+</div>
+
+<script>
+function resetPage() {
+    window.location.href = "/";
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    width:520px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+p{
+    color:#555;
+}
+
+input[type="file"]{
+    border:2px dashed #ccc;
+    padding:15px;
+    border-radius:10px;
+    width:90%;
+    margin:20px auto;
+    display:block;
+    cursor:pointer;
+    text-align:center;
+}
+
+input[type="file"]:hover{
+    border-color:#667eea;
+    background:#f9f9ff;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 25px;
+    border:none;
+    background:black;
+    color:white;
+    font-size:15px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    background:#333;
+    transform:scale(1.05);
+}
+
+.result-section{
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid #eee;
+}
+
+.file-name{
+    font-weight:bold;
+}
+
+.resume-score{
+    color:white;
+    font-weight:bold;
+    padding:8px 18px;
+    border-radius:20px;
+    display:inline-block;
+    margin:15px 0;
+}
+
+.green{background:#0ebf57;}
+.orange{background:#f39c12;}
+.red{background:#e74c3c;}
+.gray{background:#7f8c8d;}
+
+.role{
+    margin:15px 0;
+}
+
+.skills-title{
+    margin-top:15px;
+}
+
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    margin-top:10px;
+}
+
+.skill-badge{
+    background:rgb(46, 72, 224);
+    color:white;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+.reset-btn{
+    margin-top:25px;
+}
+
+.role{
+    font-size:20px;
+    margin-top:15px;
+}
+
+.error-role{
+    color:#e74c3c;
+    font-weight:bold;
+}
+
+.no-skill-msg{
+    color:#e74c3c;
+    font-size:14px;
+    margin-top:10px;
+}
